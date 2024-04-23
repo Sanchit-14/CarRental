@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+   # unique name for your deployment
+   name: deployment-php
+spec:
+   # 3 pods should be exists all time.
+   replicas: 2
+   selector: 
+     matchLabels: 
+      app: php-app
+   template: 
+     metadata:
+      labels:
+        app: php-app 
+     spec:
+      containers: 
+      - name: mycontainerphp
+        image: harshitdevops29/carrental_php:01
